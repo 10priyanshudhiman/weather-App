@@ -17,6 +17,7 @@
 </div>
     <div class = 'container' style= "background-image:url(<%=image[0] %>)">
        <% var i =0; %>
+       
 
      <%  keysArray2.forEach(function(keys){  %>
 <div class = 'cards'>
@@ -36,18 +37,20 @@
 
 <div class = 'container' style= "background-image:url(<%=image[1] %>)">
        <% var i =0; %>
+       <% var j =0; %>
 
     <%  keysArray1.forEach(function(keys){ %>
       <%if(image.length === i){%>
-        <%i = 0;%>
+        <%j = 0;%>
       <%}%>
       <div class ='cards'>
-      <div class="location-card" style= "background-image:url(<%=image[i] %>)">
+      <div class="location-card" style= "background-image:url(<%=image[j] %>)">
         <div class = 'contents'>
         <h1> <%= keys.toUpperCase() %> </h1>
           <h3 class = 'subtitle'> <%= keysArray3[i] %></h3>
           </div>
         <% i++; %>
+        <% j++; %>
           </div>
           </div>
     <%  }); %>

@@ -1,0 +1,58 @@
+<%- include("header") -%>
+
+
+
+
+<div class="search" style = "background-image: url(https://images.unsplash.com/photo-1592210454359-9043f067919b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80)">
+  <h1 class = "title"> <%= weatherapp %> </h1>
+  <form class="form-components" action="/" method="post">
+        <div class="search-box">
+          <input  type="text" name="location" value="" size = 80 style = "height: 35px" placeholder = "Search for any City or Country">
+        </div>
+        <div class="submit">
+          <button class = "btn" type="submit" name="button" style = "height: 35px">Search</button>
+        </div>
+
+  </form>
+</div>
+    <div class = 'container' style= "background-image:url(<%=image[0] %>)">
+       <% var i =0; %>
+
+     <%  keysArray2.forEach(function(keys){  %>
+<div class = 'cards'>
+    <div class="current-card" style= "background-image:url(<%=image[i] %>)">
+      <div class = contents>
+      <h1> <%= keys.toUpperCase() %></h1>
+        <h3> <%= keysArray4[i] %></h3>
+        </div>
+         <% i++; %>
+         </div>
+         </div>
+
+
+<%  }); %>
+
+</div>
+
+<div class = 'container' style= "background-image:url(<%=image[1] %>)">
+       <% var i =0; %>
+
+    <%  keysArray1.forEach(function(keys){ %>
+      <%if(image.length === i){%>
+        <%i = 0;%>
+      <%}%>
+      <div class ='cards'>
+      <div class="location-card" style= "background-image:url(<%=image[i] %>)">
+        <div class = 'contents'>
+        <h1> <%= keys.toUpperCase() %> </h1>
+          <h3 class = 'subtitle'> <%= keysArray3[i] %></h3>
+          </div>
+        <% i++; %>
+          </div>
+          </div>
+    <%  }); %>
+</div>
+
+
+
+<%- include("footer") -%>
